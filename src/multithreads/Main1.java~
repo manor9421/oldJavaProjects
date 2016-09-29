@@ -40,21 +40,3 @@ public class Main1 {
 
 Методы suspend,resume.stop - DEPRECATED
 */
-
-/*
-MyThread a = new MyThread();
-MyThread b= new MyThread();
-
-ThreadGroup gr = new ThreadGroup(“name");// группа потоков(для общего управления)
-
-Thread t1= new Thread(gr, a, “Thread #1");
-Thread t2= new Thread(gr, b, “Thread #2");
-t1.start();
-t2.start();
-
-Thread threads[] = new Thread[gr.activeCount()];
-gr.enumerate(threads);
-for(Thread t : threads)
-	System.out.println(t.getName());
-gr.interrupt(); 
-*/
