@@ -200,6 +200,18 @@ public class Main {
 		System.out.println(aC5.m2(1000));
 		*/
 		
+		E e = (a,b)->{
+			return a==b ? true : false;
+		};
+		boolean k = e.method(1, 1);
+		String q = "";
+		if((k+"").equals("true")){
+			q = "F";
+		}
+		
+		System.out.println(q+2);
+		
+		
 		
 	}
 
