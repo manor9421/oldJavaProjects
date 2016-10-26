@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Set;
 
+import com.mnr.makesome.Room.Wall;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -163,6 +165,23 @@ public class Main {
 		
 		System.out.println(aSet);
 		
+		Room room = new Room(12, 20, 4);
+		room.showParameters();
+		
+//		Wall wall = new Wall(1, 1);
+//		System.out.println(wall.wallHeight);
+		
+		int a = 12;
+		Integer q = a;
+		a = 0;
+		int b = q;
+		q =0;
+		
+		System.out.println("a: " + a + "| q:" + q + " " + b);
+		
+		
+		
+		
 		
 	}
 	
@@ -199,3 +218,4 @@ public class Main {
 	}
 
 }
+
