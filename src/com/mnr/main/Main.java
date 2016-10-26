@@ -1,217 +1,200 @@
-package com.mnr.main;
+package com.mnr.makesome;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Map;
+import java.util.Set;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		/*A b = new B();
-		C c = new C();
-		//A.meth1();
-		c.meth1();
-		//b.meth1();
-		b = c;
-		//b.meth1();
-		int w = 0;
-		try{
-			try{
-				throw new RuntimeException();
-			}catch(RuntimeException e){
-				System.out.println("e: "+e);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			int[] q = {1,2};
-			int f = 42/w;
-			q[99] = 53;
-		}catch(ArithmeticException e){
-			System.out.println("Exception: " + e);
-		}catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Exception2: " + e);
-		}
-		A c2 = new C();
-		//c2.m2();
-		System.out.println(c.qMeth(2));
-		
-		C d = new D();
-		d.qMeth(3);
-		d.m2();
-		*/
-		
-		
-		
-		/* Map
-		
-		Map<Integer,String> a = new HashMap<>();
-		
-		a.put(1, "Roman");
-		a.put(2, "Sasha");
-		a.put(5, "Boris");
-		a.put(6, "Felix");
-		a.put(12, "Misha");
-		
-		if(a.get(123) == null){
-			System.out.println("empty");
-		}else{
-			System.out.println("full " + a.get(4));
-		}
-		
-		System.out.println(a.keySet());
-		*/
-		
+		/*B bClass = new B(1, 2, 3, 4);
+		//bClass.c = 12;
 
-		/* LinkedList
+		System.out.println(bClass.c);
+
+		//System.out.println(bClass.c);
 		
-		LinkedList<Integer> l = new LinkedList<>();
-		l.add(1);
-		l.add(2);
-		l.add(3);
-		l.add(4);
-		l.add(5);
+		bClass.showShit();
+		bClass.showShit(2);
+		*/
 		
-		l.set(2, 14);
-		l.removeFirst();
-		l.removeLast();
+		/*AbsB absB = new AbsB();
+		
+		absB.callme();
+		absB.callMe18();
+		
+		AbsB b2 = null;
+		
+		try {
+			b2 = (AbsB) absB.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		//b2.c = 12;
+		System.out.println(b2.c = 12);
+		
+		b2 = null;
+		System.out.println(absB.getClass());
+
+		System.gc();*/
+		
+		/*T t = new T(12);
+		
+		
+		t=null;
+		
+		System.gc();*/
+		
+		/*
+		LinkedList<String> l = new LinkedList<>();
+		l.add("a");
+		l.add("b");
+		l.add("c");
+		l.add("d");
+		
+		ListIterator<String> i = l.listIterator();
+		
+		String buf;
+		while(i.hasNext()){
+		
+			buf = i.next();
+			if(buf.equals("c")){
+				i.add("q");
+				System.out.println("Added");
+			}
+			if(buf.equals("d")){
+				i.set("d2");
+				i.add("u");
+				i.add("u2");
+				System.out.println("Set and Added");
+			}	
+		}
+		
+		l.add("f");
+		i=l.listIterator();
+		while(i.hasNext()){
+			if(i.next().equals("c")){
+				i.add("1");
+			}
+		}
+		
+		buf = null;
 		System.out.println(l);
 		
-		l.getFirst();
+		stoppedMeth();
 		
-		Iterator<Integer> li = l.iterator();
-		while(li.hasNext()){
-			//li.remove();
-			Integer i = li.next();
-			if(i==14 || i == 4) li.remove();
-			System.out.println("-> "+i);
-		}
+		System.out.println("end");
+		*/
+		
+		/*
+		Integer.valueOf(16);
+		System.out.println(Integer.valueOf(16) == Integer.valueOf(16));// value == value
+		System.out.println(16 == Integer.valueOf(16));//value == value
+		System.out.println(new Integer(16) == Integer.valueOf(16));// link != value
+		System.out.println(new Integer(16) == new Integer(16));// link != link
+		System.out.println('\u03A6');
+		System.out.println("short min/max val = " + Short.MIN_VALUE + " / " + Short.MAX_VALUE);
+		System.out.println("Integer: " + Integer.MIN_VALUE + " / " + Integer.MAX_VALUE);
+		System.out.println("Long: " + Long.MIN_VALUE + " / " + Long.MAX_VALUE);
+		System.out.println("Double: " + Double.MIN_VALUE + " / " + Double.MAX_VALUE);
+		System.out.println("Float: " + Float.MIN_VALUE + " / " + Float.MAX_VALUE);
+		*/
+		
+		/*int[] q = new int[]{1,2,3,4,5};
+		for (int i : q) {
 
-		System.out.println(l);
-		*/
-		/*ListIterator<Integer> li = l.listIterator();
-		
-		while(li.hasNext()){
-			
-			if(li.next()==3){
-				System.out.println("a");
-				li.remove();
-			}
-				
-		}
-		System.out.println("====");
-		while(li.hasPrevious()){
-			System.out.println(li.previous().hashCode());
-		}
-		/*li.set(777);
-		
-		while(li.hasPrevious()){
-			System.out.println("last:" + li.previous());
-		}*/
-		
-		/* HashSet
-		
-		HashSet<String> h = new HashSet<>();
-		h.add("a");
-		h.add("b");
-		h.add("c");
-		h.add("d");
-		h.add("e");
-		
-		System.out.println("First: " + h);
-		
-		Iterator<String> hsi = h.iterator();
-		
-		while(hsi.hasNext()){
-			
-			String eString = hsi.next();
-			if(eString.equals("b")){
-				hsi.remove();
-			}
-			
+			System.out.print(i+" ");
 			
 		}
-		System.out.println("Last: " + h);
-		*/
+		System.out.println();
 		
-		/* Map
-		Map<String, String> m = new HashMap<>();
-		m.put("1", "a");
-		m.put("2", "b");
-		m.put("3", "c");
-		m.put("4", "d");
+		int[] r = new int[34];
 		
-		for(Map.Entry<String, String> mEntry : m.entrySet()){
-			System.out.println(mEntry.getKey() + "_" + mEntry.getValue());
+		r[1] = 3;
+		for (int i : r) {
+
+			System.out.print(i+" ");
+			
 		}
+		System.out.println();
 		
-		for(Iterator<Map.Entry<String, String>> it = m.entrySet().iterator(); it.hasNext(); ){
-			Map.Entry<String, String> entry = it.next();
-			if(entry.getKey().equals("2")){
-				it.remove();
-			}
+		int[] n = new int[15];
+		Arrays.fill(n, 14);
+		for (int i : n) {
+			System.out.print(i+ " ");
 		}
-		System.out.println(m);
-		*/
+		System.out.println();
 		
-		/* Ternary
+		//
 		
-		int a = 2;
-		int b = 4;
-		int min = a < b ? a : b;// int c; if(a<b){c=a;}else{c=b;}
-		boolean q = a < b;
-		System.out.println( min + " " + q );
-		
-		String s = "s".equals("ss") ? "yes" : "no";
+		String[] s = {"a","s","s","s"};
+		String[] s2 = new String[3];
 		System.out.println(s);
 		
-		String r = "s"=="s" ? "yes" : "no";
-		System.out.println(r);
+		List<String> l = new ArrayList<>();
+		l.add("a");
+		l.add("b");
+		l.add("c");
+		l.add("d");
+		l.add(3,"q");
 		
-		int v = 12==12 ? 1 : 0;
-		System.out.println(v);
-		*/
+		System.out.println(l);
 		
-		/* Lambda
-		SomeInterface aI;
-		aI = ()->12;
-		System.out.println(aI.m1());
+		String[] s3 = new String[l.size()];
+		l.toArray( s3 );
 		
-		SomeInterface2 aC2 = (i) -> i*2==2;
-		SomeInterface2 aC3 = (int i) -> i*2==4;
-		SomeInterface2 aC4 = i -> i*2==6;
+		for (String string : s3) {
+			System.out.print(string);
+		}*/
 		
-		System.out.println( aC2.m2(2) + " : " + aC3.m2(2) + " : " + aC4.m2(3) );
+		Set<String> aSet = new LinkedHashSet<>();
+		aSet.add("a");
+		aSet.add("b");
+		aSet.add("Q");
+		aSet.add("d");
+		aSet.add("Q");
 		
-		SomeInterface2 aC5 = i ->{
+		System.out.println(aSet);
+		
+		
+	}
+	
+	
+	public static void stoppedMeth(){
+		
+		boolean stopping = true;
+		
+		while(stopping){
 			
-			if( i > 100 ){
-				return true;
-			}else{
-				return false;
+			int k = 0;
+			stop:
+				while(k<4){
+				
+				System.out.println("+" + k);
+				int r = 0;
+				while(r<3){
+					
+					System.out.println("r " + ++r);
+					//break stop;// stop while cycles 1&2
+					break;// stop current cycle
+				}
+				k++;
+				//return; // stop method
 			}
 			
-		};
-		System.out.println(aC5.m2(1000));
-		*/
-		
-		E e = (a,b)->{
-			return a==b ? true : false;
-		};
-		boolean k = e.method(1, 1);
-		String q = "";
-		if((k+"").equals("true")){
-			q = "F";
+			stopping = false;
+			System.out.println("boolean while stopped");
+			
 		}
 		
-		System.out.println(q+2);
-		
-		
+		System.out.println("end of meth");
 		
 	}
 

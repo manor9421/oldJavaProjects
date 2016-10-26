@@ -1,7 +1,15 @@
-package com.mnr.main;
+package com.mnr.makesome;
 
-interface A {
+public class A {
+
+	int a;
+	int b;
+	int c;
 	
-	void meth1();
-	
+	public A(int a, int b, int c){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+		System.out.println("made A");
+	}
 }
