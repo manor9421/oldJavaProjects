@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.util.LinkedList;
 
 public class Main {
 
@@ -301,6 +302,7 @@ public class Main {
 		
 		
 		/* Write Serializable
+		 * If we need to serialize object which was inherited, his parent must have empty constructor
 		try(
 			FileOutputStream fos = new FileOutputStream("/d/file.txt");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -331,6 +333,69 @@ public class Main {
 			e.printStackTrace();
 		}
 		*/
+		
+		/*String path = "/d";
+		String name = "qq.t";
+		
+		File aFile = new File(path,name);
+		
+		aFile.mkdir();
+		
+		try {
+			aFile.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}*/
+		
+		/*
+		File forList = new File("/d/file.array");
+		try {
+			forList.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// write
+		LinkedList<String> ll = new LinkedList<>();
+		for(int i=0;i<100000;i++){
+			ll.add("e"+i);
+		}
+		String path = "/d/file.txt";
+		try(
+			FileOutputStream fos = new FileOutputStream("/d/w.w");// will create file if not exist
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+		){
+			oos.writeObject(ll);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}*/
+		// read
+		/*try(
+			FileInputStream fis = new FileInputStream("/d/w.w");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+		){
+			LinkedList<String> rLL = (LinkedList<String>) ois.readObject();
+			System.out.println(rLL.get(rLL.size()-1));
+		}catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}*/
+		
+		
+		/*try(
+			BufferedReader br = new BufferedReader(new FileReader("/d/w.w"),8192);
+		){
+			int max = 0;
+			int c;
+			while( (c=br.read()) != -1 ){
+				if(c>max) max=c;
+			}
+			System.out.println((char) max);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		*/
+		
 		
 		
 		

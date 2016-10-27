@@ -156,7 +156,7 @@ public class Main {
 			System.out.print(string);
 		}*/
 		
-		Set<String> aSet = new LinkedHashSet<>();
+		/*Set<String> aSet = new LinkedHashSet<>();
 		aSet.add("a");
 		aSet.add("b");
 		aSet.add("Q");
@@ -170,7 +170,44 @@ public class Main {
 		
 //		Wall wall = new Wall(1, 1);
 //		System.out.println(wall.wallHeight);
+		*/
 		
+		long startTime = System.currentTimeMillis();
+		
+		ArrayList<String> aL = new ArrayList<>();
+		aL.add("a");
+		aL.add("b");
+		aL.add("c");
+		aL.add("d");
+		aL.add("E");
+		aL.add("F");
+		aL.add("G");
+		aL.add(3, "BB");
+		aL.add(4,"MM");
+		for(int i=0;i<100000;i++){
+			aL.add(aL.size(), "QQ");
+		}
+		
+		
+		long time = System.currentTimeMillis() - startTime;
+		System.out.println("AL Time: " + time);
+		
+		long st = System.currentTimeMillis();
+		LinkedList<String> lL = new LinkedList<>();
+		lL.add("a");
+		lL.add("b");
+		lL.add("c");
+		lL.add("d");
+		lL.add("E");
+		lL.add("F");
+		lL.add("G");
+		lL.add(3, "BB");
+		lL.add(4,"MM");
+		for(int i=0;i<100000;i++){
+			lL.add(lL.size(), "QQ");
+		}
+		long llTime = System.currentTimeMillis() - st;
+		System.out.println("LL Time: " + llTime);
 		
 		
 		
