@@ -5,7 +5,7 @@ public class MySingleton {
 	
 	
 	
-	/* My Best one
+	/** My Best one */
 	private volatile MySingleton instance;
 	
 	private MySingleton(){}
@@ -22,7 +22,7 @@ public class MySingleton {
 		return instance;
 		
 	}
-	*/
+	
 	
 	
 	/*
