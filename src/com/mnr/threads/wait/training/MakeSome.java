@@ -6,10 +6,10 @@ public class MakeSome {
 	boolean check = false;
 	
 	synchronized public void getSome(int n){
-		while(check){
+		while(check == true){
 			try {
 				System.out.println(Thread.currentThread().getName()+" is waiting");
-				wait();
+				wait();// make current thread waiting
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -17,13 +17,12 @@ public class MakeSome {
 		this.n = n;
 		check = true;
 		System.out.println("new n: " + n);
-		notify();
-		
+		notify();// notify thread which is waiting
 		
 	}
 	
 	synchronized public int sendSome(){
-		while(!check){
+		while(check == false){
 			try {
 				System.out.println(Thread.currentThread().getName()+" is waiting");
 				wait();
