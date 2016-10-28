@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class Main {
@@ -72,9 +73,11 @@ public class Main {
 		*/
 		
 		
-		ArrayList<String> aL = new ArrayList<>();
+	//	LinkedList<String> aL = new LinkedList<>();// 953 ms
+		ArrayList<String> aL = new ArrayList<>();// 1016
+		
 		Random rand = new Random();
-		for(int j=0;j<1000;j++){
+		for(int j=0;j<1000000;j++){
 			String newName = "Me" + rand.nextInt(2993);
 			aL.add(newName);
 		}
@@ -84,6 +87,8 @@ public class Main {
 		
 		long allTime = System.currentTimeMillis() - startTime;
 		System.out.println("time: " + allTime);
+		
+		String[] ala = aL.toArray(new String[0]);
 		
 		
 	}
