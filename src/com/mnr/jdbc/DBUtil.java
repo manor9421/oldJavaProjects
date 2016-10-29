@@ -11,10 +11,8 @@ public class DBUtil {
 	static final String mySqlUrl = "jdbc:mysql://localhost:3306";
 	static final String mySqlDB = "/jdbc_work";
 	
-	static final String sqLiteUser = "";
-	static final String sqLitePwd = "";
-	static final String sqLiteUrl = "";
-	static final String sqLiteDB = "";
+	static final String sqLiteUrl = "jdbc:sqlite:trythat.db";// in resources folder
+	
 	
 	public static Connection getConnection(DBType dbType) throws SQLException{
 		
@@ -22,7 +20,14 @@ public class DBUtil {
 		case MYSQL:
 			return DriverManager.getConnection(mySqlUrl+mySqlDB,mySqlUser,mySqlPwd);
 		case SQLITE:
-			return DriverManager.getConnection(sqLiteUrl+sqLiteDB,sqLiteUser,sqLitePwd);
+			try{
+				
+				Class.forName("org.sqlite.JDBC");
+				return DriverManager.getConnection("jdbc:sqlite::resource:trythat.db");
+				
+			}catch(ClassNotFoundException e){
+				e.printStackTrace();
+			}
 		default:
 			return null;
 		}

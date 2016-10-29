@@ -8,8 +8,9 @@ public class Main {
 		//UpdateClass.inserMySqlData("John", 44);
 		//SelectClass.selectMySqlData("John");
 		
-		System.out.println(ValidateParams.validEmail("j@ogny.com"));
+		//System.out.println(ValidateParams.validEmail("j@ogny.com"));
 		
+		SelectDataManager.selectSqliteData("Anna");
 		
 	}
 
